@@ -57,3 +57,30 @@ Open **PowerShell 7** as your user and run:
 ```powershell
 Install-Module -Name Az -Scope CurrentUser -Force -AllowClobber
 Install-Module -Name Microsoft.Graph -Scope CurrentUser -Force -AllowClobber
+
+📥 Usage
+Step 1: Clone or Download
+bash
+
+
+1
+2
+git clone https://github.com/your-username/azure-cybersecurity-assessment.git
+cd azure-cybersecurity-assessment
+Step 2: Run the Script
+powershell
+
+
+1
+2
+3
+.\Azure-Cybersecurity-Assessment.ps1 `
+  -SubscriptionId "your-subscription-id" `
+  -TenantId "your-tenant-id"
+🔍 Find your: 
+
+Subscription ID: Azure Portal → Subscriptions → Copy ID
+Tenant ID: Azure Portal → Microsoft Entra ID → Overview → "Tenant ID"
+Step 3: Review the Report
+A file named Azure-Cybersecurity-Assessment-YYYYMMDD-HHMM.html is generated
+Open it in any browser to view the interactive, color-coded report
