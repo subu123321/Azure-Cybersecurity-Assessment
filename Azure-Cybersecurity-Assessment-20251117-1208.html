@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Azure Cybersecurity Posture Assessment</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 20px; background: #f9fbfd; }
+        h1, h2 { color: #1e3a8a; }
+        table { border-collapse: collapse; width: 100%; margin: 15px 0; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+        th, td { border: 1px solid #dbeafe; padding: 10px; text-align: left; }
+        th { background-color: #2563eb; color: white; }
+        .high { background-color: #fef2f2; color: #b91c1c; font-weight: bold; }
+        .medium { background-color: #fffbeb; color: #b45309; }
+        .low { background-color: #f0fdf4; color: #166534; }
+        .unknown { background-color: #f3f4f6; color: #6b7280; }
+        .summary-box { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.07); margin: 20px 0; }
+    </style>
+</head>
+<body>
+<h1>🛡️ Azure Cybersecurity Posture Assessment</h1>
+<div class='summary-box'>
+    <p><strong>Subscription ID:</strong> 3f960a34-7ddb-49a8-a8c8-c44fe9768860</p>
+    <p><strong>Tenant ID:</strong> e6f6fec9-e8a5-4967-860e-5bcb2921b061</p>
+    <p><strong>Assessment Time:</strong> 2025-11-17 12:07</p>
+    <p><strong>Log Analytics Workspaces:</strong> 0</p>
+    <p><strong>Resources Assessed:</strong> 2 VMs, 2 PaaS, 2 Network</p>
+</div><h2>1. Identity & Access (Entra ID)</h2><table><tr><th>Check</th><th>Risk</th><th>Details</th><th>Resource</th></tr><tr><td>Global Admin MFA Enforcement</td><td class='low'>Low</td><td>All admins secured</td><td>-</td></tr><tr><td>Legacy Authentication (IMAP/SMTP)</td><td class='high'>High</td><td>Detected in last 24h</td><td>-</td></tr><tr><td>External Guest Users</td><td class='low'>Low</td><td> guests</td><td>-</td></tr></table><h2>2. Compute (IaaS)</h2><table><tr><th>Resource</th><th>Check</th><th>Risk</th><th>Details</th></tr><tr><td>AD-P</td><td>Disk Encryption</td><td class='medium'>Medium</td><td>Platform-managed only</td></tr><tr><td>AD-P</td><td>Backup Protection</td><td class='high'>High</td><td>Not enabled</td></tr><tr><td>AD-P</td><td>Patch Compliance</td><td class='unknown'>Unknown</td><td>No LA workspace</td></tr><tr><td>Moodle-VM</td><td>Disk Encryption</td><td class='medium'>Medium</td><td>Platform-managed only</td></tr><tr><td>Moodle-VM</td><td>Backup Protection</td><td class='high'>High</td><td>Not enabled</td></tr><tr><td>Moodle-VM</td><td>Patch Compliance</td><td class='unknown'>Unknown</td><td>No LA workspace</td></tr></table><h2>3. Platform (PaaS)</h2><table><tr><th>Resource</th><th>Check</th><th>Risk</th><th>Details</th></tr><tr><td>monthly-reports-kv</td><td>Key Vault - Soft Delete</td><td class='high'>High</td><td>Off</td></tr><tr><td>monthly-reports-kv</td><td>Key Vault - Purge Protection</td><td class='high'>High</td><td>Off</td></tr></table><h2>4. Network</h2><table><tr><th>Resource</th><th>Check</th><th>Risk</th><th>Details</th></tr><tr><td>Public IPs</td><td>Public-Facing Resources</td><td class='medium'>Medium</td><td>2 found</td></tr><tr><td>Virtual Networks</td><td>DDoS Protection</td><td class='medium'>Medium</td><td>Not enabled</td></tr></table><h2>5. Defender for Cloud</h2><table><tr><th>Resource</th><th>Check</th><th>Risk</th><th>Details</th></tr><tr><td>Defender</td><td>Non-Healthy Assessments</td><td class='high'>High</td><td>89 gaps</td></tr></table><h2>6. Governance & Monitoring</h2><table><tr><th>Resource</th><th>Check</th><th>Risk</th><th>Details</th></tr><tr><td>Azure Policy</td><td>Non-Compliant Resources</td><td class='medium'>Medium</td><td>10 violations</td></tr><tr><td>Monitoring</td><td>Resources Without Logs</td><td class='medium'>Medium</td><td>20</td></tr></table><h2>📌 Notes</h2>
+<div class='summary-box'>
+    <ul>
+        <li><strong>High</strong>: Critical risk — immediate remediation recommended.</li>
+        <li><strong>Medium</strong>: Best-practice gap — should be addressed in next cycle.</li>
+        <li><strong>Low</strong>: Compliant or low-impact finding.</li>
+        <li>This assessment uses <b>Reader + Microsoft Graph Reader</b> permissions — no changes made.</li>
+        <li>Patch data sourced from <b>all Log Analytics workspaces</b> in the subscription.</li>
+    </ul>
+</div>
+</body>
+</html>
